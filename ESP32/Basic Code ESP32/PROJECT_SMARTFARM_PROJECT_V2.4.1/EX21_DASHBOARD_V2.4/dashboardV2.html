@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>IOT SMTBAORD</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="https://www.facebook.com/RSU.IT.SMT/" class="simple-text">
+                    SMART FARM
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="ti-panel"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+				<li class="active-pro">
+                    <a href="https://www.facebook.com/RSU.IT.SMT/">
+                        <i class="ti-export"></i>
+                        <p>RSU MISSMT</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-panel"></i>
+								<p>Stats</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-bell"></i>
+                                    <p class="notification">2</p>
+									<p>Notifications</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://www.facebook.com/RSU.IT.SMT/">RSU MISSMT</a></li>
+                                <li><a href="https://www.facebook.com/groups/1918528521733153/">IOT Seminar Group</a></li>
+                              </ul>
+                        </li>
+						<li>
+                            <a href="#">
+								<i class="ti-settings"></i>
+								<p>Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-thought"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Humidity</p>
+						 <p>%</p>
+                                            <p id="humidity" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-thought"></i> DHT11
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-shine"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Temperature</p>
+						 <p>&deg;C</p>
+                                            <p id="temperature" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-shine"></i> DHT11
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                            <i class="ti-signal"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+				   															<p>WIFI</p>
+																				<p>Signal</p>
+				              									<p id="wifi" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-signal"></i> LDR
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="ti-dashboard"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Status</p>
+																						<p>BOARD</p>
+																						<p id="status" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-dashboard"></i> ESP32
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+		<div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-paint-bucket"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Soil Sensor</p>
+						 																<p>%</p>
+                                            <p id="soilsensor" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-paint-bucket"></i> Soil
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-light-bulb"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Light Sensor</p>
+						 																<p>&deg;C</p>
+                                            <p id="lightsensor" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-light-bulb"></i> LDR
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                            <i class="ti-bolt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+				   															<p>LIGHT</p>
+																				<p>ldr sensor</p>
+				              									<p id="ldr" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-bolt"></i> LDR
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="ti-rss-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Status</p>
+						<p>SYSTEM</p>
+						<p id="status" class="navbar-brand"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-rss-alt"></i> ESP32
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Humidity & Temperature</h4>
+                                <p class="category">DHT11 sensor log</p>
+                            </div>
+                            <div class="content">
+
+				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Click
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+
+                        <li>
+                            <a href="https://www.facebook.com/RSU.IT.SMT/">
+                                Visit MISSMT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/groups/1918528521733153/">
+                               Iot Workshop
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="https://www.facebook.com/RSU.IT.SMT/">RSU MISSMT</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+	<script src="assets/js/paper-dashboard.js"></script>
+
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+	<script src="smt_firebase_script.js"></script>
+
+	<!-- FIREBASE IOT SMT-->
+	<script type="text/javascript">
+		var toOffline;
+		var newItems = false;
+
+/* ################################################ */
+// CHANGE HERE
+
+	  // Initialize Firebase
+	    var config = {
+	      	apiKey: "AIzaSyA13XgnEQiChzRltfa1zddz2db0iZ6bTBk",
+	      	authDomain: "smtled-f6bc8.firebaseapp.com",
+	      	databaseURL: "https://smtled-f6bc8.firebaseio.com",
+	      	projectId: "smtled-f6bc8",
+	      	storageBucket: "smtled-f6bc8.appspot.com",
+	     	 messagingSenderId: "630307958542"
+	    };
+
+/* ################################################ */
+
+    	$(document).ready(function(){
+
+			//$.material.init()
+			var chart = new CanvasJS.Chart("chartContainer", {
+				title: {
+					text: "IoT SMTBOARD"
+				},
+				axisX:{
+					valueFormatString: "HH:mm",
+					crosshair: {
+								enabled: true,
+								snapToDataPoint: true
+							}
+				},
+				axisY: {
+					valueFormatString: "0.0#",
+					crosshair: {
+								enabled: true
+							}
+				},
+
+				toolTip: {
+					shared: true,
+					contentFormatter: function (e) {
+						var content = CanvasJS.formatDate(e.entries[0].dataPoint.x, "HH:mm:ss") + "<br>";
+						content += "<strong>Temperature</strong>: " + e.entries[0].dataPoint.y + " &deg;C<br>";
+						content += "<strong>Humidity</strong>: " + e.entries[1].dataPoint.y + " %";
+						content += "<strong>Soil sensor</strong>: " + e.entries[2].dataPoint.y + " &deg;C<br>";
+						content += "<strong>Light sensor/strong>: " + e.entries[3].dataPoint.y + " %";
+						content += "<strong>WiFi signal</strong>: " + e.entries[4].dataPoint.y + " %";
+						return content;
+					}
+				},
+				animationEnabled: true,
+				theme: "light2",
+				data: [
+					{
+						type: "column", //change it to line, area, column, pie, etc
+						name: "Temperature",
+						showInLegend: true,
+						markerSize: 0,
+						//color: "rgba(40,175,101,0.6)",
+						legendMarkerType: "square",
+						dataPoints: []
+					},
+					{
+						type: "line", //change it to line, area, column, pie, etc
+						name: "Humidity",
+						showInLegend: true,
+						//color: "#F08080",
+						markerSize: 0,
+						legendMarkerType: "square",
+						dataPoints: []
+					},
+					{
+						type: "line", //change it to line, area, column, pie, etc
+						name: "soil",
+						showInLegend: true,
+						//color: "#F08080",
+						markerSize: 0,
+						legendMarkerType: "square",
+						dataPoints: []
+					},
+					{
+						type: "line", //change it to line, area, column, pie, etc
+						name: "light",
+						showInLegend: true,
+						//color: "#F08080",
+						markerSize: 0,
+						legendMarkerType: "square",
+						dataPoints: []
+					},
+					{
+						type: "line", //change it to line, area, column, pie, etc
+						name: "wifi",
+						showInLegend: true,
+						//color: "#F08080",
+						markerSize: 0,
+						legendMarkerType: "square",
+						dataPoints: []
+					}
+				]
+			});
+			chart.render();
+
+			firebase.initializeApp(config);
+
+			var SmartFarm = firebase.database().ref().child("SmartFarm");
+
+			SmartFarm.on("child_added", function(sanp) {
+				if (!newItems) return;
+				var row = sanp.val();
+				var mytime = row.time;
+				row.time = new Date(row.time);
+				chart.options.data[0].dataPoints.push({x: row.time, y: row.temperature});
+				chart.options.data[1].dataPoints.push({x: row.time, y: row.humidity});
+				chart.options.data[2].dataPoints.push({x: row.time, y: row.soil});
+				chart.options.data[3].dataPoints.push({x: row.time, y: row.ldr});
+				chart.options.data[4].dataPoints.push({x: row.time, y: row.wifi});
+				chart.render();
+
+				$("#temperature").html(row.temperature);
+				$("#humidity").text(row.humidity);
+				$("#ldr").text(row.ldr);
+				$("#wifi").text(row.wifi);
+				$("#soilsensor").text(row.soil);
+				$("#status").text("ON");
+				//$("#lastupdate").text(mytime);
+
+				setTimeoffline();
+			});
+
+			var now = new Date();
+			SmartFarm.orderByChild("time").startAt(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()).once("value", function(sanp) {
+				console.log(sanp);
+				newItems = true;
+				var dataRows = sanp.val();
+				var lastRows = 0;
+				$.each(dataRows, function(index, row) {
+					row.time = new Date(row.time);
+					chart.options.data[0].dataPoints.push({x: row.time, y: row.temperature});
+					chart.options.data[1].dataPoints.push({x: row.time, y: row.humidity});
+					chart.options.data[2].dataPoints.push({x: row.time, y: row.soil});
+					chart.options.data[3].dataPoints.push({x: row.time, y: row.ldr});
+					chart.options.data[4].dataPoints.push({x: row.time, y: row.wifi});
+					lastRows = row;
+				});
+				chart.render();
+
+				var Arow = lastRows;
+				$("#temperature").html(Arow.temperature);
+				$("#humidity").text(Arow.humidity);
+				$("#ldr").text(Arow.ldr);
+				$("#wifi").text(Arow.wifi);
+				$("#soilsensor").text(Arow.soil);
+
+				var now = new Date();
+				Arow.time = new Date(Arow.time);
+				if (Math.round(now) -  Math.round(Arow.time) < (10 * 60 * 1000)) {
+					$("#status").text("ON");
+				} else {
+					$("#status").text("OFF");
+				}
+
+				setTimeoffline();
+			});
+
+        	$.notify({
+            	icon: 'ti-gift',
+            	message: "Welcome to <b>IoT Workshop</b> - power by MISSMT Rangsit University."
+
+            },{
+                type: 'success',
+                timer: 4000
+            });
+
+    	});
+
+var setTimeoffline = function() {
+	if (typeof toOffline === "number") clearTimeout(toOffline);
+
+	toOffline = setTimeout(function() {
+	$("#status").text("OFF");
+	}, 10 * 60 * 1000);
+}
+
+	</script>
+
+</html>
