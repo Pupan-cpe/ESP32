@@ -9,7 +9,7 @@ void setup() {
   Serial.println("Press + or - to calibration factor");
   Serial.println("ArduinoAll Calibration 0 Please Wait ... ");
   scale.set_scale();
-  scale.tare(); //รีเซตน้ำหนักเป็น 0 
+  scale.tare(); 
   long zero_factor = scale.read_average();
   Serial.print("Zero factor: "); 
   Serial.println(zero_factor);
