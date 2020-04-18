@@ -6,7 +6,7 @@
 #include <SoftwareSerial.h>
 SoftwareSerial NodeSerial(D2, D3); // RX | TX
 char auth[] = "gqg9UeoF60NG4tzGX8bY8_6Fi9C6bA3l"; //Token key
-char server[] = "oasiskit.com";
+//char server[] = "oasiskit.com";
 char ssid[] = "Ais@wifi";
 char pass[] = "0890546835";
 int port = 8080;
@@ -22,9 +22,10 @@ void setup() {
   pinMode(D3, OUTPUT);
 
   pinMode(D1, OUTPUT);
-  WiFi.begin(ssid, pass); //เชื่อมต่อ WiFi
-  Blynk.config(auth, server, port); //กำหนด Token key , ชื่อ Server และ port
-  Blynk.connect(); //เชื่อมต่อไปยัง Blynk
+  //WiFi.begin(ssid, pass); //เชื่อมต่อ WiFi
+  Blynk.begin(auth, ssid, pass);
+  //Blynk.config(auth, server, port); //กำหนด Token key , ชื่อ Server และ port
+  //Blynk.connect(); //เชื่อมต่อไปยัง Blynk
 }
 
 BLYNK_CONNECTED() {  // ฟังก์ชันนี้ทำงานเมื่อต่อ Blynk ได้
